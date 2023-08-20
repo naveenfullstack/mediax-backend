@@ -27,6 +27,12 @@ mongoose.connect(process.env.MONGODB_URI ,{
 const ReqDomain = require ('./middlewares/ReqDomain')
 app.use(ReqDomain);
 
+const ReqIp = require ('./middlewares/ReqIp')
+app.use(ReqIp);
+
+const Headers = require ('./middlewares/Headers')
+app.use(Headers);
+
 //Routes
 
 const TestData = require('./routes/TestData');
@@ -34,6 +40,9 @@ app.use('/testdata/', TestData);
 
 const GetMovies = require('./routes/GetMovies');
 app.use('/getmovies/', GetMovies);
+
+const Login = require('./routes/auth/Login');
+app.use('/login/', Login);
 
 
 const port = 3001;
