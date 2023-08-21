@@ -36,7 +36,7 @@ app.use(Headers);
 //Routes
 
 const TestData = require('./routes/TestData');
-app.use('/testdata/', TestData);
+app.use('/', TestData);
 
 const GetMovies = require('./routes/GetMovies');
 app.use('/getmovies/', GetMovies);
